@@ -240,7 +240,51 @@ export default class BookingsController {
       return response.created({ message: "berhasil booking" });
     } catch (error) {
       return response.unprocessableEntity({
-        msg: "Gagal menyimpan data field",
+        msg: "Gagal menyimpan data booking",
+        error: error.messages ? error.messages.errors : error.message || error,
+      });
+    }
+  }
+
+  /**
+   *
+   * @swagger
+   * /api/v1/bookings/{id}:
+   *  delete:
+   *    summary: Menghapus jadwal booking
+   *    description: Menghapus jadwal booking otomatis menghapus pada user
+   *    security:
+   *      - bearerAuth: []
+   *    tags:
+   *      - Booking
+   *    parameters:
+   *       - in: path
+   *         name : id
+   *         required : true
+   *         schema :
+   *            type: number
+   *            minimum: 1
+   *         description: ID dari booking yang mau dihapus
+   *    responses:
+   *       200:
+   *         $ref: '#/components/responses/DeletedData'
+   *       422:
+   *         $ref: '#/components/responses/FailedDeleteData'
+   */
+  public async destroy({ params, response }: HttpContextContract) {
+    let { id } = params;
+
+    try {
+      const data = await Booking.query().where("id", id).firstOrFail();
+
+      console.log(`data`, data);
+
+      await data.delete();
+
+      return response.ok({ message: "berhasil hapus jadwal booking" });
+    } catch (error) {
+      return response.unprocessableEntity({
+        msg: "Gagal hapus data booking",
         error: error.messages ? error.messages.errors : error.message || error,
       });
     }

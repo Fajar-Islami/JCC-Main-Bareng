@@ -59,6 +59,10 @@ Route.group(() => {
     .only(["index", "show"])
     .middleware({ "*": ["auth", "verify"] });
 
+  Route.delete("/bookings/:id", "BookingsController.destroy")
+    .middleware(["auth", "verify", "isUser"])
+    .as("booking.destroy");
+
   Route.put("/bookings/:id/join", "BookingsController.join")
     .middleware(["auth", "verify", "isUser"])
     .as("booking.join");

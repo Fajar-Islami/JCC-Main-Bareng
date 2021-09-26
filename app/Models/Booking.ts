@@ -5,11 +5,14 @@ import {
   belongsTo,
   column,
   computed,
+  HasMany,
+  hasMany,
   manyToMany,
   ManyToMany,
 } from "@ioc:Adonis/Lucid/Orm";
 import User from "App/Models/User";
 import Field from "App/Models/Field";
+import Schedule from "./Schedule";
 
 export default class Booking extends BaseModel {
   /**
@@ -81,6 +84,9 @@ export default class Booking extends BaseModel {
     pivotTable: "schedules",
   })
   public players: ManyToMany<typeof User>;
+
+  @hasMany(() => Schedule)
+  public terdaftarBooking: HasMany<typeof Schedule>;
 
   @computed()
   public get players_count() {

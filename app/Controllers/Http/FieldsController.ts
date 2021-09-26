@@ -148,7 +148,7 @@ export default class FieldsController {
    * /api/v1/venues/{venue_id}/field/{id}:
    *  get:
    *    summary: Mencari field berdasarkan id
-   *    description: Pencarian field berdasarkan id field
+   *    description: Pencarian field berdasarkan id field. Detail venue dan jadwal booking pada tanggal tertentu (default hari ini)
    *    security:
    *      - bearerAuth: []
    *    tags:
