@@ -1,7 +1,8 @@
 # JCC-Main-Bareng
 Tugas Akhir Jabar Coding Camp (JCC) Node JS - Membuat WEB API Aplikasi Main Bareng\
 Oleh:\
-Ahmad Fajar Islami (fajarislami.0702@gmail.com)
+Ahmad Fajar Islami (fajarislami.0702@gmail.com)\
+(https://t.me/fajar_afi)
 
 [Link Aplikasi Klik Disini](https://web-api-main-bareng.herokuapp.com/docs/index.html)
 
