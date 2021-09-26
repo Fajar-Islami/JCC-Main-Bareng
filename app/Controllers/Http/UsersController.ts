@@ -73,7 +73,7 @@ export default class UsersController {
       // send mail
       await Mail.send((msg) => {
         msg
-          .from("fajar@jccta.com")
+          .from("adonis.demo@sanberdev.com")
           .to(result.email)
           .subject("Verifikasi Email")
           .htmlView("emails/otp_verification", { otp_code });

@@ -23,7 +23,7 @@ import Route from "@ioc:Adonis/Core/Route";
 Route.group(() => {
   // Test
   Route.get("/", async () => {
-    return { hello: "world" };
+    return { msg: "Konek Aplikasi Bermain bersama" };
   });
   Route.get("/test", "TestsController.hello");
 
@@ -73,3 +73,7 @@ Route.group(() => {
 
   Route.post("/login", "UsersController.login").as("user.login");
 }).prefix("/api/v1");
+
+Route.get("/", async () => {
+  return { msg: "Copy kan link berikut " };
+});
