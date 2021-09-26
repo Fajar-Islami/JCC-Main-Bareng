@@ -206,7 +206,7 @@ export default class VenuesController {
    *       application/json:
    *          $ref: '#/components/schemas/UpdateVenueBody'
    *    responses:
-   *       201:
+   *       200:
    *         $ref: '#/components/responses/UpdateData'
    *       401:
    *         $ref: '#/components/responses/Unauthorized'
@@ -253,7 +253,7 @@ export default class VenuesController {
    *          minimum: 1
    *       description: ID dari venue
    *    responses:
-   *       201:
+   *       200:
    *         $ref: '#/components/responses/DeletedData'
    *       401:
    *         $ref: '#/components/responses/Unauthorized'

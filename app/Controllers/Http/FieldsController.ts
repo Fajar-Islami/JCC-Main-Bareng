@@ -257,7 +257,7 @@ export default class FieldsController {
    *       application/json:
    *            $ref: '#/components/schemas/UpdateFieldBody'
    *    responses:
-   *       201:
+   *       200:
    *         $ref: '#/components/responses/UpdateData'
    *       401:
    *         $ref: '#/components/responses/Unauthorized'
@@ -324,7 +324,7 @@ export default class FieldsController {
    *          minimum: 1
    *       description: ID dari field
    *    responses:
-   *       201:
+   *       200:
    *         $ref: '#/components/responses/DeletedData'
    *       401:
    *         $ref: '#/components/responses/Unauthorized'

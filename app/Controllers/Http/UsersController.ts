@@ -205,7 +205,7 @@ export default class UsersController {
    *                 msg: "Login sukses"
    *                 token: "NA.HbVZojoAxthMDrpAHRveC1-la5lonAIzBXc78Rbvn8EcdHLG0xzPKKa56w4x"
    *                 role: "owner"
-   *       422:
+   *       400:
    *         description: Gagal login
    *         content:
    *            application/json:
@@ -265,8 +265,10 @@ export default class UsersController {
    *                      is_verified: 1
    *                      created_at: "2021-09-25T21:20:04.000+07:00"
    *                      updated_at: "2021-09-25T21:20:04.000+07:00"
+   *       401:
+   *         $ref: '#/components/responses/Unauthorized'
    */
-  z;
+
   public async userLogin({ auth, response }: HttpContextContract) {
     return response.ok({ data: auth.user });
   }
